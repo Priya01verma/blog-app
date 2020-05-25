@@ -11,16 +11,45 @@ import {
 } from "@material-ui/core";
 import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+
 const HomePage = props => {
     const classes = useStyles();
     return (
         <Fragment>
-            <Box m={1} >
-                <Link to="/AllBlogs">
-                    <Button variant="contained" color="primary" className={classes.button}>
-                        Blogs
-                    </Button>
-                </Link>
+            <Box display={"flex"} justifyContent={"center"} m={1}>
+                <Box>
+                    <Link to="/AllBlogs">
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            className={classes.button}
+                        >
+                            Blogs
+                        </Button>
+                    </Link>
+                </Box>
+                <Box ml={1.5}>
+                    <Link to="/PostsData">
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            className={classes.button}
+                        >
+                            Posts Blogs
+                        </Button>
+                    </Link>
+                </Box>
+                <Box ml={1.5}>
+                    <Link to="/UserProfile">
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            className={classes.button}
+                        >
+                            Profile Form
+                        </Button>
+                    </Link>
+                </Box>
             </Box>
             <div className={classes.cover}></div>
         </Fragment>
@@ -39,7 +68,7 @@ const useStyles = makeStyles(theme => {
             backgroundPosition: "center",
             position: "relative"
         },
-        button:{
+        button: {
             marginTop: 12
         }
     });

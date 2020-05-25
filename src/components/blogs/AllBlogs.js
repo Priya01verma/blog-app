@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AllBlogs = () => {
     const dispatch = useDispatch();
@@ -23,14 +23,14 @@ const AllBlogs = () => {
             .then(response => {
                 dispatch({ type: "ADD_BLOGS", value: response.data });
             });
-    }, []);
+    }, [dispatch]);
 
     return (
         <Box p={2} mb={1}>
             {blog.map(userData => {
                 return (
                     <Box p={2} mb={2} key={userData.id} className={classes.blogStyle}>
-                    <Link className={classes.linkStyle} to={`/${userData.id}`}>
+                    <Link className={classes.linkStyle} to={`/AllBlogs/${userData.id}`}>
                         <div className={classes.dataStyle}>{userData.name}</div>
                     </Link>
                     </Box>

@@ -3,12 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import {
     createStyles,
     Typography,
-    Theme,
     makeStyles,
     Box,
-    Grid,
-    Chip,
-    Button
 } from "@material-ui/core";
 import axios from "axios";
 

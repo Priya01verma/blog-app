@@ -25,6 +25,12 @@ const selectedBlogReducer =(state={},actions) =>{
         // console.log(actions.value)
         state.userSelectedBlog = {...state,...actions.value};
      }
+    if(actions.type === 'POSTS_BLOGS'){
+        state.userSelectedBlog={...state,...actions.value};
+    }
+    if(actions.type === 'LIMITED_BLOGS'){
+        state.userSelectedBlog ={...state,...[actions.value]}
+    }
      return state;
 }
 const reducer = combineReducers({
@@ -38,8 +44,9 @@ const store = createStore(reducer)
 store.subscribe(() =>{
         console.log('store changed ',store.getState())
 })
-store.dispatch({type:'CHANGE_NAME',value: 'Priya Verma'})
-store.dispatch({type:'CHANGE_AGE',value: 23})
-store.dispatch({type:'CHANGE_NAME',value: 'Dfghfh Verma'})
-store.dispatch({type:'CHANGE_AGE',value: 22})
+// store.dispatch({type:'CHANGE_NAME',value: 'Priya Verma'})
+// store.dispatch({type:'CHANGE_AGE',value: 23})
+// store.dispatch({type:'CHANGE_NAME',value: 'Dfghfh Verma'})
+// store.dispatch({type:'CHANGE_AGE',value: 22})
+
 export default store;
